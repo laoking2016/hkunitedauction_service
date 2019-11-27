@@ -1,4 +1,4 @@
-package maindata.service;
+package cn.hkunitedauction.maindata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

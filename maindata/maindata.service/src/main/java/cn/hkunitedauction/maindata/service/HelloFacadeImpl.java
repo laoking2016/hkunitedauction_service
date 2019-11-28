@@ -14,6 +14,6 @@ public class HelloFacadeImpl implements HelloFacade {
     @Override
     @GetMapping
     public String get(){
-        return "Hello spring boot.";
+        return "Hello maindata.";
     }
 }

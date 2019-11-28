@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: maindata
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      default-zone: 

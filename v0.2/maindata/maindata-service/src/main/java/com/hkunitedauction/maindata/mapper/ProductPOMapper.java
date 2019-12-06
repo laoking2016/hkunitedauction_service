@@ -1,7 +1,7 @@
 package com.hkunitedauction.maindata.mapper;
 
 import com.hkunitedauction.maindata.model.ProductPO;
-import com.mos.quote.common.MyMapper;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface ProductPOMapper extends MyMapper<ProductPO> {
+public interface ProductPOMapper extends Mapper<ProductPO> {
 }

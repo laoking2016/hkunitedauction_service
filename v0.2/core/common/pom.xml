@@ -9,6 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>common</artifactId>
+	<packaging>jar</packaging>
 
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -34,10 +35,10 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!--plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 </project>

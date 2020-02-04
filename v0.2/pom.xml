@@ -28,5 +28,6 @@
         <module>cloud</module>
         <module>core</module>
         <module>maindata</module>
+        <module>sample</module>
     </modules>
 </project>

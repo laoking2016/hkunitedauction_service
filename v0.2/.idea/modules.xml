@@ -5,12 +5,17 @@
       <module fileurl="file://$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/common/common.iml" filepath="$PROJECT_DIR$/core/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/config-server/config-server.iml" filepath="$PROJECT_DIR$/cloud/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/cloud/discovery-server/discovery-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata.iml" filepath="$PROJECT_DIR$/maindata/maindata.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata-api/maindata-api.iml" filepath="$PROJECT_DIR$/maindata/maindata-api/maindata-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata-service/maindata-service.iml" filepath="$PROJECT_DIR$/maindata/maindata-service/maindata-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/root.iml" filepath="$PROJECT_DIR$/root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample-api/sample-api.iml" filepath="$PROJECT_DIR$/sample/sample-api/sample-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample-service/sample-service.iml" filepath="$PROJECT_DIR$/sample/sample-service/sample-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/util/util.iml" filepath="$PROJECT_DIR$/core/util/util.iml" />
     </modules>
   </component>
 </project>

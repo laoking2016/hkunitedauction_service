@@ -1,0 +1,10 @@
+com\hkunitedauction\maindata\model\ProductPO.class
+com\hkunitedauction\maindata\model\CategoryPO.class
+com\hkunitedauction\maindata\MaindataServiceApplication.class
+com\hkunitedauction\maindata\mapper\CategoryPOMapper.class
+com\hkunitedauction\maindata\service\ProductFacadeImpl.class
+com\hkunitedauction\maindata\configuration\DozerBeanMapperConfigure.class
+com\hkunitedauction\maindata\configuration\ResponseHandler.class
+com\hkunitedauction\maindata\mapper\ProductPOMapper.class
+com\hkunitedauction\maindata\service\HelloFacadeImpl.class
+com\hkunitedauction\maindata\configuration\BaseSwaggerConfiguration.class

@@ -1,0 +1,8 @@
+com\hkunitedauction\sample\configuration\ResponseHandler.class
+com\hkunitedauction\sample\service\IReceiveService.class
+com\hkunitedauction\sample\configuration\BaseSwaggerConfiguration.class
+com\hkunitedauction\sample\SampleServiceApplication.class
+com\hkunitedauction\sample\service\ISendService.class
+com\hkunitedauction\sample\service\ReceiveService.class
+com\hkunitedauction\sample\configuration\DozerBeanMapperConfigure.class
+com\hkunitedauction\sample\service\HelloFacadeImpl.class

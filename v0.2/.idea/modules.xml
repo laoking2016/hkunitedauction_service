@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../AuctionAdmin/codes/auction-admin-rest/auction-admin.iml" filepath="$PROJECT_DIR$/../../../AuctionAdmin/codes/auction-admin-rest/auction-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../eBuySellServer/develop/backend_cloud_commodity.iml" filepath="$PROJECT_DIR$/../../../eBuySellServer/develop/backend_cloud_commodity.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/common/common.iml" filepath="$PROJECT_DIR$/core/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/config-server/config-server.iml" filepath="$PROJECT_DIR$/cloud/config-server/config-server.iml" />

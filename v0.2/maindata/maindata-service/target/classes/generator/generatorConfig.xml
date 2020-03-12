@@ -11,9 +11,9 @@
         <property name="endingDelimiter" value="`"/>
 
         <!--添加自定义的继承接口-->
-        <!--plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.mos.quote.common.MyMapper"/>
-        </plugin-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
 
         <!--数据源配置-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -30,7 +30,9 @@
         <javaClientGenerator targetPackage="com.hkunitedauction.maindata.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
         <!--表配置，tableName支持%，表示全部生成-->
-        <table tableName="maindata_product" domainObjectName="ProductPO"></table>
-        <table tableName="maindata_category" domainObjectName="CategoryPO"></table>
+        <!--table tableName="maindata_product" domainObjectName="ProductPO"></table>
+        <table tableName="maindata_user" domainObjectName="UserPO"></table>
+        <table tableName="maindata_catalog" domainObjectName="CatalogPO"></table-->
+        <table tableName="maindata_image" domainObjectName="ImagePO"></table>
     </context>
 </generatorConfiguration>

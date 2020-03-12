@@ -3,9 +3,12 @@ spring:
     name: main-data
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://101.201.233.31:3306/ebuysell2?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: tiger2
-    password: Win@2018
+    url: jdbc:mysql://localhost:3306/maindata?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 1234567
+    #url: jdbc:mysql://101.201.233.31:3306/ebuysell2?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #username: tiger2
+    #password: Win@2018
   cloud:
     config:
       discovery:
@@ -13,6 +16,10 @@ spring:
         serviceId: config-server
       profile: dev
       label: master
+  http:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
 
 server:
   port: 8081
@@ -26,3 +33,7 @@ eureka:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+file:
+  root: C:/ext/tools/nginx-1.17.5/html/upload_dir
+  baseUrl: /

@@ -4,13 +4,14 @@ import com.hkunitedauction.common.response.QueryResult;
 import com.hkunitedauction.maindata.model.User;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-
 @RequestMapping("/user")
 public interface UserFacade {
 
     @GetMapping
-    QueryResult<User> query(HttpServletRequest reqeust);
+    QueryResult<User> query(@RequestParam(value = "filter", required = false) String filter,
+                            @RequestParam(value = "sort", required = false) String sort,
+                            @RequestParam(value = "pagasize", required = false) Integer pagesize,
+                            @RequestParam(value = "page", required = false) Integer page);
 
     @PostMapping
     Long create(@RequestBody User model);
@@ -20,4 +21,6 @@ public interface UserFacade {
 
     @DeleteMapping("/{id}")
     void delete(@PathVariable Long id);
+
+
 }

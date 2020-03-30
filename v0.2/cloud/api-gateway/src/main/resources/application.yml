@@ -7,7 +7,7 @@ spring:
       max-request-size: 128MB
 
 server:
-  port: 9010
+  port: 8710
 
 eureka:
   client:
@@ -15,3 +15,13 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+
+security:
+  jwt-secret: 1qaz@wsx2edc$rfv
+  jwt-expiration: 3600000
+
+#zuul:
+#  routes:
+#   auction:
+#      path: /auction/bid/**
+#      url: forward:/auction/bid

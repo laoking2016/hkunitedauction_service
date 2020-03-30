@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hkunitedauction.mall.mapper.GoodPOMapper" >
+  <resultMap id="BaseResultMap" type="com.hkunitedauction.mall.model.GoodPO" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="l1" property="l1" jdbcType="VARCHAR" />
+    <result column="l2" property="l2" jdbcType="VARCHAR" />
+    <result column="l3" property="l3" jdbcType="VARCHAR" />
+    <result column="payments" property="payments" jdbcType="VARCHAR" />
+    <result column="init_price" property="initPrice" jdbcType="DOUBLE" />
+    <result column="quantity" property="quantity" jdbcType="INTEGER" />
+    <result column="discount" property="discount" jdbcType="DOUBLE" />
+    <result column="final_price" property="finalPrice" jdbcType="DOUBLE" />
+    <result column="transportation_cost" property="transportationCost" jdbcType="DOUBLE" />
+    <result column="poundage_rate" property="poundageRate" jdbcType="DOUBLE" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="modifed_time" property="modifedTime" jdbcType="TIMESTAMP" />
+    <result column="deleted_time" property="deletedTime" jdbcType="TIMESTAMP" />
+    <result column="images" property="images" jdbcType="LONGVARCHAR" />
+  </resultMap>
+</mapper>

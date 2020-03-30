@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: member
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/member?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 1234567
+    #url: jdbc:mysql://101.201.233.31:3306/ebuysell2?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #username: tiger2
+    #password: Win@2018
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      profile: dev
+      label: master
+  http:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
+
+server:
+  port: 8803
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+security:
+  jwt-secret: 1qaz@wsx2edc$rfv
+  jwt-expiration: 3600000
+  password-secret: 5tgb^yhn&ujm*ik,

@@ -10,6 +10,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../../../eBuySellServer/develop/pom.xml" />
         <option value="$PROJECT_DIR$/../../../AuctionAdmin/codes/auction-admin-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/auction/pom.xml" />
+        <option value="$PROJECT_DIR$/mall/pom.xml" />
+        <option value="$PROJECT_DIR$/order/pom.xml" />
+        <option value="$PROJECT_DIR$/member/pom.xml" />
       </list>
     </option>
   </component>

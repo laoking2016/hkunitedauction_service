@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hkunitedauction</groupId>
+		<artifactId>order</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>order-service</artifactId>
+	<packaging>jar</packaging>
+
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--  编译jdk版本  -->
+		<!--jdk.version>1.8</jdk.version-->
+		<!--  依赖版本  -->
+		<!--mybatis.version>3.4.6</mybatis.version-->
+		<!--mapper.version>3.4.3</mapper.version-->
+		<!--pagehelper.version>5.1.4</pagehelper.version-->
+		<!--spring.version>4.3.13.RELEASE</spring.version-->
+		<!--mybatis.spring.version>1.3.2</mybatis.spring.version-->
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>order-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>maindata-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>2.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.dozermapper</groupId>
+			<artifactId>dozer-spring-boot-starter</artifactId>
+			<version>6.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+    </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+					<overwrite>true</overwrite>
+					<verbose>true</verbose>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.47</version>
+					</dependency>
+					<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper</artifactId>
+						<version>3.4.3</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+			<!-- 添加docker maven插件 -->
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<!--docker镜像相关的配置信息 -->
+				<configuration>
+					<!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
+					<serverId>docker-aliyun</serverId>
+					<!--私有仓库地址 -->
+					<registryUrl>registry.cn-shenzhen.aliyuncs.com</registryUrl>
+					<!--镜像名，这里用工程名 -->
+					<imageName>registry.cn-shenzhen.aliyuncs.com/hkunitedauction/${project.artifactId}:${project.version}</imageName>
+					<!-- 指定基础镜像 类似dockerfile的FROM指令 -->
+					<baseImage>java:8</baseImage>
+					<!-- 配置容器启动后，执行什么命令，等于与 dockerfile的ENTRYPOINT -->
+					<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+					<!-- 为dockerde tag指定版本号、latest -->
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
+					<!-- 是否有push的功能 true代表有 -->
+					<pushImage>true</pushImage>
+					<!-- push后是否覆盖已存在的标签镜像 -->
+					<forceTags>true</forceTags>
+					<!-- 复制jar包到docker容器指定的目录 -->
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<!-- 指定要复制jar包的根目录，${project.build.directory}代表 target的目录 -->
+							<directory>${project.build.directory}</directory>
+							<!-- 指定要复制的文件，${project.build.finalName}代表打包后的jar -->
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+        </plugins>
+	</build>
+
+
+</project>

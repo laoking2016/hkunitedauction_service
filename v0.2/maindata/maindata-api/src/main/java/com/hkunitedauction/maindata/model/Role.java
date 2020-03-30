@@ -20,8 +20,8 @@ public enum  Role {
         }
     }
 
-    public static Role valueOf(int pageType) {
-        return (Role) map.get(pageType);
+    public static Role valueOf(int role) {
+        return (Role) map.get(role);
     }
 
     public int getValue() {

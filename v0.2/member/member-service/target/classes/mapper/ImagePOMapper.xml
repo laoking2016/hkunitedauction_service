@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hkunitedauction.maindata.mapper.ImagePOMapper" >
+  <resultMap id="BaseResultMap" type="com.hkunitedauction.maindata.model.ImagePO" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="vpath" property="vpath" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="icon_name" property="iconName" jdbcType="VARCHAR" />
+    <result column="icon_path" property="iconPath" jdbcType="VARCHAR" />
+    <result column="icon_vpath" property="iconVpath" jdbcType="VARCHAR" />
+    <result column="icon_url" property="iconUrl" jdbcType="VARCHAR" />
+    <result column="checkSum" property="checksum" jdbcType="VARCHAR" />
+    <result column="deleted" property="deleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="modifed_time" property="modifedTime" jdbcType="TIMESTAMP" />
+    <result column="deleted_time" property="deletedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

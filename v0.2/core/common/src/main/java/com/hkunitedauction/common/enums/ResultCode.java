@@ -4,7 +4,7 @@ package com.hkunitedauction.common.enums;
 public enum ResultCode {
 
     SUCCESS(0, "OK"),
-    SYSTEM_ERROR(1000, "System error");
+    SYSTEM_ERROR(1000, "ERROR");
 
     private Integer code;
 

@@ -9,12 +9,20 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="auction-admin" />
+        <module name="auction-api" />
+        <module name="auction-service" />
         <module name="backend_cloud_commodity" />
         <module name="common" />
         <module name="config-server" />
         <module name="discovery-server" />
         <module name="maindata-api" />
         <module name="maindata-service" />
+        <module name="mall-api" />
+        <module name="mall-service" />
+        <module name="member-api" />
+        <module name="member-service" />
+        <module name="order-api" />
+        <module name="order-service" />
         <module name="sample-api" />
         <module name="sample-service" />
         <module name="util" />
@@ -22,7 +30,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="api-gateway" target="1.8" />
+      <module name="auction" target="1.8" />
       <module name="auction-admin" target="1.8" />
+      <module name="auction-api" target="1.8" />
+      <module name="auction-service" target="8" />
       <module name="backend_cloud_commodity" target="1.8" />
       <module name="cloud" target="1.8" />
       <module name="common" target="1.8" />
@@ -32,6 +43,15 @@
       <module name="maindata" target="1.8" />
       <module name="maindata-api" target="1.8" />
       <module name="maindata-service" target="8" />
+      <module name="mall" target="1.8" />
+      <module name="mall-api" target="1.8" />
+      <module name="mall-service" target="8" />
+      <module name="member" target="1.8" />
+      <module name="member-api" target="1.8" />
+      <module name="member-service" target="8" />
+      <module name="order" target="1.8" />
+      <module name="order-api" target="1.8" />
+      <module name="order-service" target="8" />
       <module name="root" target="1.8" />
       <module name="sample" target="1.8" />
       <module name="sample-api" target="1.8" />

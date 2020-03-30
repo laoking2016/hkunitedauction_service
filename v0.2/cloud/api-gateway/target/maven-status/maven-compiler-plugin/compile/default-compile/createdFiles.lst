@@ -1,1 +1,2 @@
-com\hkunitedauction\cloud\configserver\ApiGatewayApplication.class
+com\hkunitedauction\cloud\apigateway\ApiGatewayApplication.class
+com\hkunitedauction\cloud\apigateway\security\WebSecurityConfig.class

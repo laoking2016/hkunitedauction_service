@@ -1,0 +1,5 @@
+com\hkunitedauction\order\model\OrderStatus.class
+com\hkunitedauction\order\model\OrderDetail.class
+com\hkunitedauction\order\model\Order.class
+com\hkunitedauction\order\api\OrderFacade.class
+com\hkunitedauction\order\model\OrderType.class

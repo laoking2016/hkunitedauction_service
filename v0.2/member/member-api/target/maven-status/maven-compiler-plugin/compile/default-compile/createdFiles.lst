@@ -1,0 +1,5 @@
+com\hkunitedauction\member\api\MemberFacade.class
+com\hkunitedauction\member\model\Member.class
+com\hkunitedauction\member\model\Register.class
+com\hkunitedauction\member\model\Login.class
+com\hkunitedauction\member\model\Credential.class

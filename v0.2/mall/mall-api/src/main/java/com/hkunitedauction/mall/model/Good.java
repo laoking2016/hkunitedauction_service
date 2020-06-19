@@ -61,4 +61,13 @@ public class Good {
 
     @ApiModelProperty(value = "payments")
     private String[] payments;
+
+    @ApiModelProperty(value = "supplier name")
+    private String supplierName;
+
+    @ApiModelProperty(value = "supplier contact")
+    private String supplierContact;
+
+    @ApiModelProperty(value = "supplier wechat")
+    private String supplierWechat;
 }

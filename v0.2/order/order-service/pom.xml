@@ -26,10 +26,19 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.hkunitedauction</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
 			<artifactId>order-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.hkunitedauction</groupId>
 			<artifactId>maindata-api</artifactId>
@@ -37,13 +46,17 @@
 		</dependency>
 		<dependency>
 			<groupId>com.hkunitedauction</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>mall-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.hkunitedauction</groupId>
-			<artifactId>util</artifactId>
+			<artifactId>auction-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>member-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -78,6 +91,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
     </dependencies>
 	<build>

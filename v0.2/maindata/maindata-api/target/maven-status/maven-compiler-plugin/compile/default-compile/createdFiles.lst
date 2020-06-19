@@ -1,0 +1,12 @@
+com\hkunitedauction\maindata\api\ImageFacade.class
+com\hkunitedauction\maindata\model\Login.class
+com\hkunitedauction\maindata\model\Product.class
+com\hkunitedauction\maindata\api\ProductFacade.class
+com\hkunitedauction\maindata\model\User.class
+com\hkunitedauction\maindata\api\UserFacade.class
+com\hkunitedauction\maindata\model\Role.class
+com\hkunitedauction\maindata\model\Image.class
+com\hkunitedauction\maindata\api\CatalogFacade.class
+com\hkunitedauction\maindata\model\CatalogItem.class
+com\hkunitedauction\maindata\model\Hello.class
+com\hkunitedauction\maindata\model\Catalog.class

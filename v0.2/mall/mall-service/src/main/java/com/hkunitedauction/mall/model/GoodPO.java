@@ -55,6 +55,15 @@ public class GoodPO {
     @Column(name = "deleted_time")
     private Date deletedTime;
 
+    @Column(name = "supplier_name")
+    private String supplierName;
+
+    @Column(name = "supplier_contact")
+    private String supplierContact;
+
+    @Column(name = "supplier_wechat")
+    private String supplierWechat;
+
     private String images;
 
     /**
@@ -307,6 +316,48 @@ public class GoodPO {
      */
     public void setDeletedTime(Date deletedTime) {
         this.deletedTime = deletedTime;
+    }
+
+    /**
+     * @return supplier_name
+     */
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    /**
+     * @param supplierName
+     */
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    /**
+     * @return supplier_contact
+     */
+    public String getSupplierContact() {
+        return supplierContact;
+    }
+
+    /**
+     * @param supplierContact
+     */
+    public void setSupplierContact(String supplierContact) {
+        this.supplierContact = supplierContact;
+    }
+
+    /**
+     * @return supplier_wechat
+     */
+    public String getSupplierWechat() {
+        return supplierWechat;
+    }
+
+    /**
+     * @param supplierWechat
+     */
+    public void setSupplierWechat(String supplierWechat) {
+        this.supplierWechat = supplierWechat;
     }
 
     /**

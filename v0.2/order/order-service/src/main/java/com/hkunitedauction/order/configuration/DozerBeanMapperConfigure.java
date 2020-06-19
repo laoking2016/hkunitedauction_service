@@ -1,5 +1,9 @@
 package com.hkunitedauction.order.configuration;
 
+import com.hkunitedauction.order.model.Order;
+import com.hkunitedauction.order.model.OrderDetail;
+import com.hkunitedauction.order.model.OrderDetailPO;
+import com.hkunitedauction.order.model.OrderPO;
 import org.dozer.DozerBeanMapperBuilder;
 import org.dozer.Mapper;
 import org.dozer.loader.api.BeanMappingBuilder;
@@ -23,7 +27,8 @@ public class DozerBeanMapperConfigure {
             @Override
             protected void configure() {
                 // 个性化配置添加在此
-
+                mapping(OrderPO.class, Order.class).exclude("detail").exclude("status").exclude("type");
+                mapping(OrderDetailPO.class, OrderDetail.class).exclude("images");
             }
         };
     }

@@ -32,7 +32,7 @@ public class GoodFacadeImpl implements GoodFacade {
         return this.service.count(example);
     }
 
-    @ApiOperation(value = "query")
+    @ApiOperation(value = "query")  
     @Override
     public QueryResult<Good> query(@RequestParam(value = "filter", required = false) String filter,
                                    @RequestParam(value = "sort", required = false) String sort,
@@ -69,5 +69,35 @@ public class GoodFacadeImpl implements GoodFacade {
     @Override
     public void patch(@PathVariable Long id, @RequestBody Good model) {
         this.service.patch(id, model);
+    }
+
+    @ApiOperation(value = "search count")
+    @Override
+    public int searchCount(@RequestParam(value = "q", required = false) String q,
+                           @RequestParam(value = "sort", required = false) String sort,
+                           @RequestParam(value = "pagasize", required = false) Integer pagesize,
+                           @RequestParam(value = "page", required = false) Integer page){
+        Example example = new Example(GoodPO.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andLike("description", "%" + q + "%");
+
+        this.service.count(example);
+    }
+
+    @ApiOperation(value = "search")
+    @Override
+    public QueryResult<Good> search(@RequestParam(value = "q", required = false) String q,
+                                    @RequestParam(value = "sort", required = false) String sort,
+                                    @RequestParam(value = "pagasize", required = false) Integer pagesize,
+                                    @RequestParam(value = "page", required = false) Integer page){
+
+        Example example = new Example(GoodPO.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andLike("description", "%" + q + "%");
+
+        Example.OrderBy orderBy = QueryBuilder.buildSortBy(example, QueryBuilder.buildParams(sort));
+        RowBounds rowBounds = QueryBuilder.buildRowBounds(page, pagesize);
+
+        return this.service.query(example, rowBounds);
     }
 }

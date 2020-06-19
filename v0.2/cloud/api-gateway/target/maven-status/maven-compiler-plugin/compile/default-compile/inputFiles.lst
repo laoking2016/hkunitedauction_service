@@ -1,2 +1,7 @@
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\api\auction\BidFacade.java
 C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\ApiGatewayApplication.java
-C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\security\WebSecurityConfig.java
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\filter\AuthorizationPreFilter.java
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\filter\CorsPostFilter.java
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\service\BidService.java
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\filter\CorsPreFilter.java
+C:\ext\codes\auction\hkunitedauction\hkunitedauction_service\v0.2\cloud\api-gateway\src\main\java\com\hkunitedauction\cloud\apigateway\service\MemberService.java

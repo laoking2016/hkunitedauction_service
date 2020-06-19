@@ -20,19 +20,19 @@ public interface LotFacade {
     Long create(@RequestBody Lot model);
 
     @PutMapping("/{id}")
-    void update(@PathVariable Long id, @RequestBody Lot model);
+    void update(@PathVariable("id") Long id, @RequestBody Lot model);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable Long id);
+    void delete(@PathVariable("id") Long id);
 
     @PatchMapping("/{id}")
-    void patch(@PathVariable Long id, @RequestBody Lot model);
+    void patch(@PathVariable("id") Long id, @RequestBody Lot model);
 
     @PostMapping("/{id}/publish")
-    void publish(@PathVariable Long id);
+    void publish(@PathVariable("id") Long id);
 
     @PostMapping("/{id}/unpublish")
-    void unpublish(@PathVariable Long id);
+    void unpublish(@PathVariable("id") Long id);
 
 
 }

@@ -4,7 +4,6 @@ import com.hkunitedauction.auction.mapper.BidPOMapper;
 import com.hkunitedauction.auction.model.Bid;
 import com.hkunitedauction.auction.model.BidPO;
 import com.hkunitedauction.auction.service.BidService;
-import com.hkunitedauction.auction.service.LotService;
 import com.hkunitedauction.common.response.QueryResult;
 import org.apache.ibatis.session.RowBounds;
 import org.dozer.Mapper;
@@ -23,9 +22,6 @@ public class BidServiceImpl implements BidService {
 
     @Autowired
     private Mapper dozerMapper;
-
-    @Autowired
-    private LotService lotService;
 
     @Override
     public Integer count(Example example) {

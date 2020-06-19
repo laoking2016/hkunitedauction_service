@@ -52,13 +52,13 @@ public class Cart {
     public void deleteItem(Long[] ids){
         for(Long id : ids){
             if(this.items.containsKey(id)){
-                int quantity = this.items.get(id);
-                quantity--;
-                if(quantity <= 0){
+                //int quantity = this.items.get(id);
+                //quantity--;
+                //if(quantity <= 0){
                     this.items.remove(id);
-                }else{
-                    this.items.replace(id, quantity);
-                }
+                //}else{
+                //    this.items.replace(id, quantity);
+                //}
             }
         }
     }

@@ -1,0 +1,6 @@
+com\hkunitedauction\auction\api\LotFacade.class
+com\hkunitedauction\auction\model\Lot.class
+com\hkunitedauction\auction\api\MemberLotFacade.class
+com\hkunitedauction\auction\model\Bid.class
+com\hkunitedauction\auction\model\LotStatus.class
+com\hkunitedauction\auction\api\BidFacade.class

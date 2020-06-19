@@ -1,2 +1,7 @@
+com\hkunitedauction\cloud\apigateway\filter\AuthorizationPreFilter.class
+com\hkunitedauction\cloud\apigateway\service\BidService.class
+com\hkunitedauction\cloud\apigateway\api\auction\BidFacade.class
+com\hkunitedauction\cloud\apigateway\filter\CorsPreFilter.class
+com\hkunitedauction\cloud\apigateway\filter\CorsPostFilter.class
 com\hkunitedauction\cloud\apigateway\ApiGatewayApplication.class
-com\hkunitedauction\cloud\apigateway\security\WebSecurityConfig.class
+com\hkunitedauction\cloud\apigateway\service\MemberService.class

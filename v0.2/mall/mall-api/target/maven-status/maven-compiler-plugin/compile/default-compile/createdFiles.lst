@@ -1,0 +1,6 @@
+com\hkunitedauction\mall\model\Cart.class
+com\hkunitedauction\mall\model\CartItem.class
+com\hkunitedauction\mall\api\CartFacade.class
+com\hkunitedauction\mall\api\GoodFacade.class
+com\hkunitedauction\mall\model\Good.class
+com\hkunitedauction\mall\model\GoodStatus.class

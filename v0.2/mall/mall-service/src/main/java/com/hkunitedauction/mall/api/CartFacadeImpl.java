@@ -27,7 +27,7 @@ public class CartFacadeImpl implements CartFacade {
 
     @ApiOperation(value = "query")
     @Override
-    public Cart query(@RequestParam("curnentUser") String currentUser) {
+    public Cart query(@RequestParam("currentUser") String currentUser) {
 
         Example example = new Example(CartPO.class);
         Example.Criteria criteria = example.createCriteria();
@@ -41,7 +41,7 @@ public class CartFacadeImpl implements CartFacade {
         return result.getList()[0];
     }
 
-    @ApiOperation(value = "delete")
+    @ApiOperation(value = "create")
     @Override
     public void create(@RequestParam("currentUser") String currentUser, @RequestParam("goodId") Long goodId) {
         Example exampleCart = new Example(CartPO.class);
@@ -58,6 +58,7 @@ public class CartFacadeImpl implements CartFacade {
         }
     }
 
+    @ApiOperation(value = "delete")
     @Override
     public void delete(@RequestParam("currentUser") String currentUser, @RequestParam("ids") Long[] ids) {
         Example exampleCart = new Example(CartPO.class);

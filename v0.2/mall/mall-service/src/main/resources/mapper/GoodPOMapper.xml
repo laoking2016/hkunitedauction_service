@@ -23,6 +23,9 @@
     <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
     <result column="modifed_time" property="modifedTime" jdbcType="TIMESTAMP" />
     <result column="deleted_time" property="deletedTime" jdbcType="TIMESTAMP" />
+    <result column="supplier_name" property="supplierName" jdbcType="VARCHAR" />
+    <result column="supplier_contact" property="supplierContact" jdbcType="VARCHAR" />
+    <result column="supplier_wechat" property="supplierWechat" jdbcType="VARCHAR" />
     <result column="images" property="images" jdbcType="LONGVARCHAR" />
   </resultMap>
 </mapper>

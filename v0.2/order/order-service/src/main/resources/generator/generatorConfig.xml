@@ -30,6 +30,7 @@
         <javaClientGenerator targetPackage="com.hkunitedauction.order.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
         <!--表配置，tableName支持%，表示全部生成-->
-        <table tableName="mall_good" domainObjectName="GoodPO"></table>
+        <table tableName="order_order" domainObjectName="OrderPO"></table>
+        <!--table tableName="order_order_detail" domainObjectName="OrderDetailPO"></table-->
     </context>
 </generatorConfiguration>

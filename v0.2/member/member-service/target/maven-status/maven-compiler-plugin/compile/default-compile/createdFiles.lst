@@ -1,0 +1,12 @@
+com\hkunitedauction\member\configuration\ResponseHandler.class
+com\hkunitedauction\member\service\MemberService.class
+com\hkunitedauction\member\configuration\BaseSwaggerConfiguration.class
+com\hkunitedauction\member\configuration\DozerBeanMapperConfigure$1.class
+com\hkunitedauction\member\mapper\MemberPOMapper.class
+com\hkunitedauction\member\model\MemberPO.class
+com\hkunitedauction\member\api\MemberFacadeImpl.class
+com\hkunitedauction\member\service\impl\MemberServiceImpl.class
+com\hkunitedauction\member\MemberApplication.class
+com\hkunitedauction\member\security\WebSecurityConfig.class
+com\hkunitedauction\member\configuration\DozerBeanMapperConfigure.class
+com\hkunitedauction\member\configuration\ExceptionHandler.class

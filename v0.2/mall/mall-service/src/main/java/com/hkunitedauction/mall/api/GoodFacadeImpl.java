@@ -74,25 +74,28 @@ public class GoodFacadeImpl implements GoodFacade {
     @ApiOperation(value = "search count")
     @Override
     public int searchCount(@RequestParam(value = "q", required = false) String q,
-                           @RequestParam(value = "sort", required = false) String sort,
-                           @RequestParam(value = "pagasize", required = false) Integer pagesize,
-                           @RequestParam(value = "page", required = false) Integer page){
+                           @RequestParam(value = "catalog", required = false) String catalog){
         Example example = new Example(GoodPO.class);
         Example.Criteria criteria = example.createCriteria();
+
+        criteria.andEqualTo("l1", catalog);
         criteria.andLike("description", "%" + q + "%");
 
-        this.service.count(example);
+        return this.service.count(example);
     }
 
     @ApiOperation(value = "search")
     @Override
     public QueryResult<Good> search(@RequestParam(value = "q", required = false) String q,
+                                    @RequestParam(value = "catalog", required = false) String catalog,
                                     @RequestParam(value = "sort", required = false) String sort,
-                                    @RequestParam(value = "pagasize", required = false) Integer pagesize,
+                                    @RequestParam(value = "pagesize", required = false) Integer pagesize,
                                     @RequestParam(value = "page", required = false) Integer page){
 
         Example example = new Example(GoodPO.class);
         Example.Criteria criteria = example.createCriteria();
+
+        criteria.andEqualTo("l1", catalog);
         criteria.andLike("description", "%" + q + "%");
 
         Example.OrderBy orderBy = QueryBuilder.buildSortBy(example, QueryBuilder.buildParams(sort));

@@ -30,13 +30,12 @@ public interface GoodFacade {
 
     @GetMapping("/search/count")
     int searchCount(@RequestParam(value = "q", required = false) String q,
-                    @RequestParam(value = "sort", required = false) String sort,
-                    @RequestParam(value = "pagasize", required = false) Integer pagesize,
-                    @RequestParam(value = "page", required = false) Integer page);
+                    @RequestParam(value = "catalog", required = false) String catalog);
 
     @GetMapping("search")
     QueryResult<Good> search(@RequestParam(value = "q", required = false) String q,
-                    @RequestParam(value = "sort", required = false) String sort,
-                    @RequestParam(value = "pagasize", required = false) Integer pagesize,
-                    @RequestParam(value = "page", required = false) Integer page);
+                             @RequestParam(value = "catalog", required = false) String catalog,
+                             @RequestParam(value = "sort", required = false) String sort,
+                             @RequestParam(value = "pagesize", required = false) Integer pagesize,
+                             @RequestParam(value = "page", required = false) Integer page);
 }

@@ -34,5 +34,14 @@ public interface LotFacade {
     @PostMapping("/{id}/unpublish")
     void unpublish(@PathVariable("id") Long id);
 
+    @GetMapping("/search/count")
+    int searchCount(@RequestParam(value = "q", required = false) String q,
+                    @RequestParam(value = "catalog", required = false) String catalog);
 
+    @GetMapping("search")
+    QueryResult<Lot> search(@RequestParam(value = "q", required = false) String q,
+                             @RequestParam(value = "catalog", required = false) String catalog,
+                             @RequestParam(value = "sort", required = false) String sort,
+                             @RequestParam(value = "pagesize", required = false) Integer pagesize,
+                             @RequestParam(value = "page", required = false) Integer page);
 }

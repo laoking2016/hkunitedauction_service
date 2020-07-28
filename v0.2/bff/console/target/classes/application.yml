@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: console
+
+server:
+  port: 8888
+
+feign:
+  product:
+    url:  http://main-data:8801/product

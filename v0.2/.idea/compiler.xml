@@ -19,6 +19,7 @@
         <module name="backend_cloud_commodity" />
         <module name="common" />
         <module name="config-server" />
+        <module name="console" />
         <module name="discovery-server" />
         <module name="maindata-api" />
         <module name="maindata-service" />
@@ -26,6 +27,8 @@
         <module name="mall-service" />
         <module name="member-api" />
         <module name="member-service" />
+        <module name="mobile" />
+        <module name="mobile (1)" />
         <module name="order-api" />
         <module name="order-service" />
         <module name="sample-api" />
@@ -40,9 +43,11 @@
       <module name="auction-api" target="1.8" />
       <module name="auction-service" target="8" />
       <module name="backend_cloud_commodity" target="1.8" />
+      <module name="bff" target="1.8" />
       <module name="cloud" target="1.8" />
       <module name="common" target="1.8" />
       <module name="config-server" target="1.8" />
+      <module name="console" target="1.8" />
       <module name="core" target="1.8" />
       <module name="discovery-server" target="1.8" />
       <module name="maindata" target="1.8" />
@@ -54,6 +59,8 @@
       <module name="member" target="1.8" />
       <module name="member-api" target="1.8" />
       <module name="member-service" target="8" />
+      <module name="mobile" target="1.8" />
+      <module name="mobile (1)" target="1.8" />
       <module name="order" target="1.8" />
       <module name="order-api" target="1.8" />
       <module name="order-service" target="8" />

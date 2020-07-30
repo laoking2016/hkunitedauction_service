@@ -1,0 +1,7 @@
+apiVersion: v1           #指定api的版本
+kind: Service            #指定创建资源的类型
+metadata:                #service的属性
+  name: mysql            #service的名字
+spec:                    #service的规格说明
+  ports:                 #service的端口属性
+  - port: 3306           #service的端口，和docker的端口一致

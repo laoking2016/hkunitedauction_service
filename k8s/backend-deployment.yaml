@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta1      #指定api的版本
+kind: Deployment              #指定创建资源的类型
+metadata:                     #deployment的属性
+  name: backend-deployment      #deployment的名字
+spec:                         #deployment的规格说明
+  replicas: 1                 #副本的数量，集群有多少个服务
+  selector:
+    matchLabels:
+      app: backend
+  template:                   #定义pod的模板
+    metadata:                 #pod的属性
+      labels:                 #pod的标签
+        app: backend            #pod的标签名字，这个很重要，它代表整个集群的标签
+    spec:                     #pod的规格说明
+      containers:             #pod的容器属性
+       - name: backend-container    #容器名
+         image: backend:0.1        #docker镜像
+         imagePullPolicy: IfNotPresent
+         ports:               #docker 的端口属性
+          - containerPort: 8701 #docker的端口号

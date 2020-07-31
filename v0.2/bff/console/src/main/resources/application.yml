@@ -4,6 +4,7 @@ spring:
 
 server:
   port: 8888
+  context-path: /api
 
 feign:
   product:

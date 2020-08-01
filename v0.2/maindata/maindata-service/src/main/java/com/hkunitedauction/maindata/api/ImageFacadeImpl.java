@@ -69,7 +69,7 @@ public class ImageFacadeImpl implements ImageFacade {
 
     @ApiOperation(value = "create")
     @Override
-    public Long create(@RequestPart("file") MultipartFile file) {
+    public Long create(@RequestParam("file") MultipartFile file) {
 
         StorageResult result = null;
         ImagePO po = null;

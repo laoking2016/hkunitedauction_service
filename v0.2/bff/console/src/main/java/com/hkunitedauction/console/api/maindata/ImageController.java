@@ -63,7 +63,7 @@ public class ImageController {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-
+        headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
         HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity (multipartRequest, headers);
 
         return restTemplate.postForObject(imageUrl, requestEntity, Long.class);

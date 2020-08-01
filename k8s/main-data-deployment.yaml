@@ -1,4 +1,4 @@
-apiVersion: apps/v1      #指定api的版本
+apiVersion: apps/v1beta1      #指定api的版本
 kind: Deployment              #指定创建资源的类型
 metadata:                     #deployment的属性
   name: main-data-deployment      #deployment的名字

@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -26,6 +27,11 @@ public class ConsoleApplication {
 		FilterRegistrationBean bean = new FilterRegistrationBean(new org.springframework.web.filter.CorsFilter(source));
 		bean.setOrder(0);
 		return bean;
+	}
+
+	@Bean
+	public RestTemplate restTemplate(){
+    	return new RestTemplate();
 	}
 
     public static void main(String[] args) {

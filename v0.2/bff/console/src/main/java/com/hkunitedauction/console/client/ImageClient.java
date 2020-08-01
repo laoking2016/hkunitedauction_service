@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
-@FeignClient(name="catalog", url = "${feign.image.url:}")
+@FeignClient(name="image", url = "${feign.image.url:}")
 public interface ImageClient {
 
     @GetMapping

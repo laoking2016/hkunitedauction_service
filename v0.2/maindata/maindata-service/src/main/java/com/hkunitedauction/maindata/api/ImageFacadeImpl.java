@@ -16,6 +16,7 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;
@@ -68,7 +69,7 @@ public class ImageFacadeImpl implements ImageFacade {
 
     @ApiOperation(value = "create")
     @Override
-    public Long create(@RequestParam("file") MultipartFile file) {
+    public Long create(@RequestPart("file") MultipartFile file) {
 
         StorageResult result = null;
         ImagePO po = null;

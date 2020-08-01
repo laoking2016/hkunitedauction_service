@@ -19,10 +19,10 @@ spec:                         #deployment的规格说明
         ports:               #docker 的端口属性
         - containerPort: 8801 #docker的端口号
         volumeMounts:
-        - mountPath: /file
-          name: file-volume
+        - mountPath: /upload_dir
+          name: upload_dir
       volumes:
-      - name: file-volume
+      - name: upload_dir
         hostPath:
-          path: /data/auction/file
+          path: /data/auction/upload_dir
           type: DirectoryOrCreate

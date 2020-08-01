@@ -35,5 +35,6 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 
 file:
-  root: C:/ext/tools/nginx-1.17.5/html/upload_dir
+  #root: C:/ext/tools/nginx-1.17.5/html/upload_dir
+  root: /upload_dir
   baseUrl: /

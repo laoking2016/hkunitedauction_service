@@ -13,8 +13,17 @@ spec:                         #deployment的规格说明
         app: main-data            #pod的标签名字，这个很重要，它代表整个集群的标签
     spec:                     #pod的规格说明
       containers:             #pod的容器属性
-       - name: main-data-container    #容器名
-         image: main-data:0.1        #docker镜像
-         imagePullPolicy: IfNotPresent
-         ports:               #docker 的端口属性
-          - containerPort: 8801 #docker的端口号
+      - name: main-data-container    #容器名
+        image: main-data:0.1        #docker镜像
+        imagePullPolicy: IfNotPresent
+        ports:               #docker 的端口属性
+        - containerPort: 8801 #docker的端口号
+        volumeMounts:
+        - mountPath: /file
+          name: file-volume
+        
+      volumes:
+      - name: file-volume
+        hostPath:
+          path: /data/auction/file
+          type: DirectoryOrCreate

@@ -20,9 +20,9 @@ spec:                         #deployment的规格说明
         - containerPort: 8701 #docker的端口号
         volumeMounts:
         - mountPath: /usr/share/nginx/html/upload_dir
-          name: upload_dir 
+          name: upload-dir 
       volumes:
-      - name: upload_dir
+      - name: upload-dir
         hostPath:
           path: /data/auction/upload_dir
           type: DirectoryOrCreate

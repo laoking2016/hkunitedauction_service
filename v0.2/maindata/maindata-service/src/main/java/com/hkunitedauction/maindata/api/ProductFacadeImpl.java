@@ -35,6 +35,20 @@ public class ProductFacadeImpl implements ProductFacade {
     @Autowired
     private Mapper dozerMapper;
 
+    @ApiOperation(value = "count")
+    @Override
+    public int count(@RequestParam(value = "filter", required = false) String filter){
+        Example example = new Example(ProductPO.class);
+        Map<String, List<String>> filterParams = QueryBuilder.buildParams(filter);
+        Example.Criteria criteria = QueryBuilder.buildCriteria(example, filterParams, "name");
+
+        if(filterParams.containsKey("name") && filterParams.get("name").size() > 0){
+            criteria.andLike("name", filterParams.get("name").get(0) + "%");
+        }
+
+        return this.productPOMapper.selectCountByExample(example);
+    }
+
     @ApiOperation(value = "query")
     @Override
     public QueryResult<Product> query(@RequestParam(value = "filter", required = false) String filter,

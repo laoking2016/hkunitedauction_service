@@ -2,6 +2,7 @@ package com.hkunitedauction.console.api.maindata;
 
 import com.hkunitedauction.common.response.QueryResult;
 import com.hkunitedauction.console.client.ProductClient;
+import com.hkunitedauction.maindata.api.ProductFacade;
 import com.hkunitedauction.maindata.model.Product;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,10 +12,16 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "Product")
 @RestController
 @RequestMapping("/main-data/product")
-public class ProductController {
+public class ProductController implements ProductFacade {
 
     @Autowired
     private ProductClient client;
+
+    @ApiOperation(value = "count")
+    @GetMapping("/count")
+    public int count(@RequestParam(value = "filter", required = false) String filter){
+        return client.count(filter);
+    }
 
     @ApiOperation(value = "query")
     @GetMapping

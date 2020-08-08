@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints      #端点，作用：用于访问k8s外部资源服务，例如mysql elk  redis
+metadata:            #Endpoints的属性
+  name: mysql
+subsets:             #Endpoints的属性集合
+  - addresses:
+    - ip: 192.168.31.245
+    ports:
+      - port: 3306

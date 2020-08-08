@@ -16,6 +16,21 @@ public interface LotFacade {
                            @RequestParam(value = "pagasize", required = false) Integer pagesize,
                            @RequestParam(value = "page", required = false) Integer page);
 
+    @GetMapping("/proceeding")
+    QueryResult<Lot> proceedingQuery(@RequestParam("currentUser") String currentUser,
+                                  @RequestParam("page") Integer page,
+                                  @RequestParam("pagesize") Integer pagesize);
+
+    @GetMapping("/win")
+    QueryResult<Lot> winQuery(@RequestParam("currentUser") String currentUser,
+                              @RequestParam("page") Integer page,
+                              @RequestParam("pagesize") Integer pagesize);
+
+    @GetMapping("/lost")
+    QueryResult<Lot> lostQuery(@RequestParam("currentUser") String currentUser,
+                                 @RequestParam("page") Integer page,
+                                 @RequestParam("pagesize") Integer pagesize);
+
     @PostMapping
     Long create(@RequestBody Lot model);
 

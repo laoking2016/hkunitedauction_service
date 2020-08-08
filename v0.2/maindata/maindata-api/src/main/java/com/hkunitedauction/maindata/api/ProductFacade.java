@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/product")
 public interface ProductFacade {
 
+    @GetMapping("/count")
+    int count(@RequestParam(value = "filter", required = false) String filter);
+
     @GetMapping
     QueryResult<Product> query(@RequestParam(value = "filter", required = false) String filter,
                                @RequestParam(value = "sort", required = false) String sort,

@@ -1,8 +1,7 @@
 package com.hkunitedauction.auction.api;
 
-import com.hkunitedauction.auction.model.Lot;
-import com.hkunitedauction.auction.model.LotPO;
-import com.hkunitedauction.auction.model.LotStatus;
+import com.hkunitedauction.auction.model.*;
+import com.hkunitedauction.auction.service.BidService;
 import com.hkunitedauction.auction.service.LotService;
 import com.hkunitedauction.common.response.QueryResult;
 import com.hkunitedauction.util.QueryBuilder;
@@ -18,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.util.Assert;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 @Api(value = "Lot")
 @RestController
 @RequiredArgsConstructor
@@ -25,6 +27,9 @@ public class LotFacadeImpl implements LotFacade {
 
     @Autowired
     private LotService service;
+
+    @Autowired
+    private BidService bidService;
 
     @Override
     @ApiOperation(value = "count")
@@ -134,5 +139,71 @@ public class LotFacadeImpl implements LotFacade {
         RowBounds rowBounds = QueryBuilder.buildRowBounds(page, pagesize);
 
         return this.service.query(example, rowBounds);
+    }
+
+    @ApiOperation(value = "Proceeding")
+    @Override
+    public QueryResult<Lot> proceedingQuery(
+            @RequestParam("currentUser") String currentUser,
+            @RequestParam("page") Integer page,
+            @RequestParam("pagesize") Integer pagesize){
+
+        Example exampleBid = new Example(BidPO.class);
+        Example.Criteria criteriaBid = exampleBid.createCriteria();
+        criteriaBid.andEqualTo("bidderName", currentUser);
+        QueryResult<Bid> resultBid = this.bidService.query(exampleBid, new RowBounds(0, 100000));
+
+        if(resultBid.getTotalCount() == 0){
+            return new QueryResult<>();
+        }
+
+        Example example = new Example(LotPO.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("status", LotStatus.ONSALE.getValue());
+        criteria.andIn("id",
+                Arrays.stream(resultBid.getList()).map(e -> e.getParentId()).distinct().collect(Collectors.toList()));
+        example.orderBy("bidTime").desc();
+
+        return this.service.query(example, QueryBuilder.buildRowBounds(page, pagesize));
+    }
+
+    @ApiOperation(value = "Win")
+    @Override
+    public QueryResult<Lot> winQuery(@RequestParam("currentUser") String currentUser,
+                                     @RequestParam("page") Integer page,
+                                     @RequestParam("pagesize") Integer pagesize) {
+
+        Example example = new Example(LotPO.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("status", LotStatus.CLOSED.getValue());
+        criteria.andEqualTo("winnerName", currentUser);
+        example.orderBy("bidTime").desc();
+
+        return this.service.query(example, QueryBuilder.buildRowBounds(page, pagesize));
+    }
+
+    @ApiOperation(value = "lost")
+    @Override
+    public QueryResult<Lot> lostQuery(@RequestParam("currentUser") String currentUser,
+                                        @RequestParam("page") Integer page,
+                                        @RequestParam("pagesize") Integer pagesize) {
+
+        Example exampleBid = new Example(BidPO.class);
+        Example.Criteria criteriaBid = exampleBid.createCriteria();
+        criteriaBid.andEqualTo("bidderName", currentUser);
+        QueryResult<Bid> resultBid = this.bidService.query(exampleBid, new RowBounds(0, 100000));
+
+        if(resultBid.getTotalCount() == 0){
+            return new QueryResult<>();
+        }
+
+        Example example = new Example(LotPO.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("status", LotStatus.CLOSED.getValue());
+        criteria.andNotEqualTo("winnerName", currentUser);
+        criteria.andIn("id",
+                Arrays.stream(resultBid.getList()).map(e -> e.getParentId()).distinct().collect(Collectors.toList()));
+
+        return this.service.query(example, QueryBuilder.buildRowBounds(page, pagesize));
     }
 }

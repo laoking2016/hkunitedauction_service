@@ -1,6 +1,10 @@
 spring:
   application:
     name: console
+  http:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
 
 server:
   port: 8888
@@ -9,3 +13,10 @@ server:
 feign:
   product:
     url:  http://main-data:8801/product
+  catalog:
+    url: http://main-data:8801/catalog
+  image:
+    url: http://main-data:8801/image
+  user:
+    url: http://main-data:8801/user
+

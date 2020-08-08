@@ -13,8 +13,6 @@ public interface MemberFacade {
     @GetMapping("/count")
     int count(@RequestParam(value = "filter", required = false) String filter);
 
-
-
     @GetMapping
     QueryResult<Member> query(
             @RequestParam(value = "filter", required = false) String filter,

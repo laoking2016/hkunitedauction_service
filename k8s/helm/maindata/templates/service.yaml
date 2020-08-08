@@ -1,0 +1,12 @@
+apiVersion: v1           #指定api的版本
+kind: Service            #指定创建资源的类型
+metadata:                #service的属性
+  name: main-data    #service的名字
+spec:                    #service的规格说明
+  type: NodePort         #规格类型：对外暴露端口
+  ports:                 #service的端口属性
+  - port: 8801             #service的端口，和docker的端口一致
+    nodePort: 31081      #暴露给外部的端口
+    targetPort: 8801
+  selector:              #选择器，也就是选择pod的集群标签
+    app: main-data           #被选择的pod集群标签

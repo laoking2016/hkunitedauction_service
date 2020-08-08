@@ -29,6 +29,26 @@
 		</dependency>
 		<dependency>
 			<groupId>com.hkunitedauction</groupId>
+			<artifactId>auction-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>mall-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>member-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
+			<artifactId>order-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hkunitedauction</groupId>
 			<artifactId>common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

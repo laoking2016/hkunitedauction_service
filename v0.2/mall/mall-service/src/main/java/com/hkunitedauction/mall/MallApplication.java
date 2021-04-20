@@ -2,13 +2,12 @@ package com.hkunitedauction.mall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @MapperScan(basePackages="com.hkunitedauction.mall.mapper")
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @EnableSwagger2
 public class MallApplication {
 

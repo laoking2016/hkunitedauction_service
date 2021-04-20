@@ -26,7 +26,7 @@ public interface OrderFacade {
     void patch(@PathVariable("id") Long id, @RequestBody Order model);
 
     @PostMapping("/{id}/pay")
-    void pay(@PathVariable Long id);
+    void pay(@PathVariable("id") Long id);
 
     @PostMapping("/{id}/ship")
     void ship(@PathVariable("id") Long id, @RequestParam("shipNo") String shipNo);

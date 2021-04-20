@@ -21,8 +21,8 @@ public interface ProductFacade {
     Long create(@RequestBody Product model);
 
     @PutMapping("/{id}")
-    void update(@PathVariable Long id, @RequestBody Product model);
+    void update(@PathVariable("id") Long id, @RequestBody Product model);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable Long id);
+    void delete(@PathVariable("id") Long id);
 }

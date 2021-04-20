@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: 192.168.56.83
+    port: 5672
+    username: admin
+    password: 1234567
+
+elasticsearch:
+  host: 192.168.56.83
+  port: 9200
+  connTimeout: 3000
+  socketTimeout: 5000
+  connectionRequestTimeout: 500

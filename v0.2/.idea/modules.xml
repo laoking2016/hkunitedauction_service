@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/cloud/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/auction/auction.iml" filepath="$PROJECT_DIR$/auction/auction.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../AuctionAdmin/codes/auction-admin-rest/auction-admin.iml" filepath="$PROJECT_DIR$/../../../AuctionAdmin/codes/auction-admin-rest/auction-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/auction/auction-api/auction-api.iml" filepath="$PROJECT_DIR$/auction/auction-api/auction-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/auction/auction-service/auction-service.iml" filepath="$PROJECT_DIR$/auction/auction-service/auction-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../eBuySellServer/develop/backend_cloud_commodity.iml" filepath="$PROJECT_DIR$/../../../eBuySellServer/develop/backend_cloud_commodity.iml" />
       <module fileurl="file://$PROJECT_DIR$/bff/bff.iml" filepath="$PROJECT_DIR$/bff/bff.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/common/common.iml" filepath="$PROJECT_DIR$/core/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/config-server/config-server.iml" filepath="$PROJECT_DIR$/cloud/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/bff/console/console.iml" filepath="$PROJECT_DIR$/bff/console/console.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/discovery-server/discovery-server.iml" filepath="$PROJECT_DIR$/cloud/discovery-server/discovery-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata.iml" filepath="$PROJECT_DIR$/maindata/maindata.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata-api/maindata-api.iml" filepath="$PROJECT_DIR$/maindata/maindata-api/maindata-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/maindata/maindata-service/maindata-service.iml" filepath="$PROJECT_DIR$/maindata/maindata-service/maindata-service.iml" />
@@ -25,7 +21,6 @@
       <module fileurl="file://$PROJECT_DIR$/member/member-api/member-api.iml" filepath="$PROJECT_DIR$/member/member-api/member-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/member/member-service/member-service.iml" filepath="$PROJECT_DIR$/member/member-service/member-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bff/mobile/mobile.iml" filepath="$PROJECT_DIR$/bff/mobile/mobile.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bff/console/mobile (1).iml" filepath="$PROJECT_DIR$/bff/console/mobile (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order-api/order-api.iml" filepath="$PROJECT_DIR$/order/order-api/order-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order-service/order-service.iml" filepath="$PROJECT_DIR$/order/order-service/order-service.iml" />

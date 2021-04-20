@@ -7,12 +7,13 @@ import com.hkunitedauction.util.LongJsonDeserializer;
 import com.hkunitedauction.util.LongJsonSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import lombok.Data;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Data
+@Builder
 @ApiModel(value="Cart")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cart {
@@ -28,7 +29,7 @@ public class Cart {
     @ApiModelProperty(value = "cart items")
     private Map<Long, Integer> items;
 
-    public static Cart build(String buyer, Long goodId){
+    /*public static Cart build(String buyer, Long goodId){
 
         Cart model = new Cart();
         model.setBuyer(buyer);
@@ -67,5 +68,5 @@ public class Cart {
         if(this.items.containsKey(goodId)){
             this.items.put(goodId, quantity);
         }
-    }
+    }*/
 }

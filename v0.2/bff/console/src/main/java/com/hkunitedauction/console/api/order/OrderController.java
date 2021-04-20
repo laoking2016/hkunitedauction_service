@@ -41,7 +41,7 @@ public class OrderController implements OrderFacade {
         client.delete(id);
     }
 
-    @DeleteMapping
+    @PatchMapping
     @ApiOperation("patch")
     public void patch(Long id, Order model) {
         client.patch(id, model);

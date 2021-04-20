@@ -2,7 +2,6 @@ package com.hkunitedauction.auction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -13,7 +12,7 @@ import java.util.TimeZone;
 
 @MapperScan(basePackages="com.hkunitedauction.auction.mapper")
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @EnableFeignClients
 @EnableSwagger2
 @EnableScheduling

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: mobile
+  http:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
+
+server:
+  port: 8889
+  context-path: /api
+
+security:
+  jwt-secret: 1qaz@wsx2edc$rfv
+  jwt-expiration: 3600000
+
+feign:
+  product:
+    url:  http://main-data:8801
+  catalog:
+    url: http://main-data:8801
+  image:
+    url: http://main-data:8801
+  user:
+    url: http://main-data:8801
+  good:
+    url: http://mall:8802
+  cart:
+    url: http://mall:8802
+  lot:
+    url: http://auction:8800
+  member:
+    url: http://member:8803
+  order:
+    url: http://order:8804

@@ -1,6 +1,8 @@
 package com.hkunitedauction.mall.api;
 
 import com.hkunitedauction.common.response.QueryResult;
+import com.hkunitedauction.mall.event.GoodUpdateEvent;
+import com.hkunitedauction.mall.event.GoodUpdateEventSender;
 import com.hkunitedauction.mall.model.Good;
 import com.hkunitedauction.mall.model.GoodPO;
 import com.hkunitedauction.mall.service.GoodService;
@@ -23,6 +25,9 @@ public class GoodFacadeImpl implements GoodFacade {
 
     @Autowired
     private GoodService service;
+
+    @Autowired
+    private GoodUpdateEventSender goodUpdateEventSender;
 
     @ApiOperation(value = "count")
     @Override
@@ -50,7 +55,13 @@ public class GoodFacadeImpl implements GoodFacade {
     @ApiOperation(value = "create")
     @Override
     public Long create(@RequestBody Good model) {
-        return this.service.create(model);
+        Long id = this.service.create(model);
+        goodUpdateEventSender.send(GoodUpdateEvent.builder()
+                .id(id)
+                .name(model.getName())
+                .description(model.getDescription())
+                .build());
+        return id;
     }
 
     @ApiOperation(value = "update")

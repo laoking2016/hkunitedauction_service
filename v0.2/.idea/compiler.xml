@@ -12,15 +12,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
-        <module name="auction-admin" />
         <module name="auction-api" />
         <module name="auction-service" />
-        <module name="backend_cloud_commodity" />
         <module name="common" />
         <module name="config-server" />
         <module name="console" />
-        <module name="discovery-server" />
         <module name="maindata-api" />
         <module name="maindata-service" />
         <module name="mall-api" />

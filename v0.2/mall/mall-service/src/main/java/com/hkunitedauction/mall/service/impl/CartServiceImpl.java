@@ -2,19 +2,18 @@ package com.hkunitedauction.mall.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.hkunitedauction.common.response.QueryResult;
+import com.hkunitedauction.mall.component.redis.Holder;
+import com.hkunitedauction.mall.component.redis.RedisPool;
 import com.hkunitedauction.mall.mapper.CartPOMapper;
 import com.hkunitedauction.mall.model.Cart;
 import com.hkunitedauction.mall.model.CartPO;
 import com.hkunitedauction.mall.service.CartService;
-import org.apache.ibatis.session.RowBounds;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
+import redis.clients.jedis.Pipeline;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,77 +25,60 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private Mapper dozerMapper;
 
-    @Override
-    public int count(Example example) {
-        return this.poMapper.selectCountByExample(example);
-    }
+    @Autowired
+    private RedisPool redis;
 
     @Override
-    public QueryResult<Cart> query(Example example, RowBounds rowBounds) {
-        Cart[] list = this.poMapper.selectByExampleAndRowBounds(example, rowBounds)
-                .stream().map(e -> {
-                    Cart model = this.dozerMapper.map(e, Cart.class);
-                    Map<Long, Integer> items = JSON.parseObject(e.getItems(), HashMap.class);
-                    model.setItems(items);
-                    return model;
-                }).collect(Collectors.toList()).toArray(new Cart[0]);
+    public QueryResult<Cart> query(String user) {
 
-        int totalCount = this.poMapper.selectCountByExample(example);
+        String cartKey = String.format("cart:%s", user);
+        Holder<Map<String, String>> mapHolder = new Holder<>();
+        redis.execute(jedis -> {
+            Map<String, String> map = jedis.hgetAll(cartKey);
+            mapHolder.value(map);
+        });
+
+        List<Cart> list = new ArrayList<>();
+        Map<Long, Integer> convertedMap = new HashMap<>();
+        for(String key: mapHolder.value().keySet()){
+            convertedMap.put(Long.parseLong(key), Integer.parseInt(mapHolder.value().get(key)));
+        }
+
+        list.add(Cart.builder().buyer(user).items(convertedMap).build());
         QueryResult<Cart> result = new QueryResult<>();
-        result.setTotalCount(totalCount);
-        result.setList(list);
-
+        result.setTotalCount(list.size());
+        result.setList(list.toArray(new Cart[0]));
         return result;
     }
 
     @Override
-    public Long create(Cart model) {
-        CartPO po = this.dozerMapper.map(model, CartPO.class);
-        po.setId(null);
-        if(model.getItems() != null){
-            po.setItems(JSON.toJSONString(model.getItems()));
-        }
-        po.setDeleted(false);
-        Date now = new Date();
-        po.setCreatedTime(now);
-        po.setModifedTime(now);
-        this.poMapper.insert(po);
-        return po.getId();
+    public void create(String user, Long goodId) {
+
+        String cartKey = String.format("cart:%s", user);
+        redis.execute(jedis -> {
+            jedis.hset(cartKey, goodId.toString(), "1");
+        });
     }
 
     @Override
-    public void update(Long id, Cart model) {
-        CartPO po = this.poMapper.selectByPrimaryKey(id);
+    public void update(String user, Long goodId, Integer quantity) {
 
-        if(po != null){
-            po.setBuyer(model.getBuyer());
-            if(model.getItems() != null){
-                po.setItems(JSON.toJSONString(model.getItems()));
+        String cartKey = String.format("cart:%s", user);
+         redis.execute(jedis -> {
+             jedis.hset(cartKey, goodId.toString(), quantity.toString());
+         });
+    }
+
+    @Override
+    public void delete(String user, Long[] goodIds) {
+
+        String cartKey = String.format("cart:%s", user);
+        redis.execute(jedis -> {
+            Pipeline p = jedis.pipelined();
+            for(Long goodId: goodIds){
+                jedis.hdel(cartKey, goodId.toString());
             }
-            po.setModifedTime(new Date());
-            this.poMapper.updateByPrimaryKey(po);
-        }
-    }
-
-    @Override
-    public void delete(Long id) {
-        CartPO po = new CartPO();
-        po.setId(id);
-        po.setDeleted(true);
-        po.setDeletedTime(new Date());
-
-        this.poMapper.updateByPrimaryKeySelective(po);
-    }
-
-    @Override
-    public void patch(Long id, Cart model) {
-        CartPO po = this.dozerMapper.map(model, CartPO.class);
-        po.setId(id);
-
-        if(model.getItems() != null){
-            po.setItems(JSON.toJSONString(model.getItems()));
-        }
-
-        this.poMapper.updateByPrimaryKeySelective(po);
+            p.sync();
+        });
     }
 }

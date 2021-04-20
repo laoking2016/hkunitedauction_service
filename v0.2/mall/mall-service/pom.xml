@@ -75,6 +75,21 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>7.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-high-level-client</artifactId>
+			<version>7.1.0</version>
+		</dependency>
     </dependencies>
 	<build>
 		<plugins>
@@ -101,6 +116,11 @@
 						<groupId>tk.mybatis</groupId>
 						<artifactId>mapper</artifactId>
 						<version>3.4.3</version>
+					</dependency>
+					<dependency>
+						<groupId>net.logstash.logback</groupId>
+						<artifactId>logstash-logback-encoder</artifactId>
+						<version>5.0</version>
 					</dependency>
 				</dependencies>
 			</plugin>

@@ -6,5 +6,5 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 
 @FeignClient(name="image", url = "${feign.image.url:}")
 public interface ImageClient extends ImageFacade {
-
+    
 }

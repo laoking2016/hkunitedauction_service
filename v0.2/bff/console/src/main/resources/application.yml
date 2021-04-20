@@ -12,11 +12,13 @@ server:
 
 feign:
   product:
-    url:  http://main-data:8801/product
+    url:  http://main-data:8801
   catalog:
-    url: http://main-data:8801/catalog
+    url: http://main-data:8801
   image:
-    url: http://main-data:8801/image
+    url: http://main-data:8801
   user:
-    url: http://main-data:8801/user
+    url: http://main-data:8801
+  member:
+    url: http://member:8803
 

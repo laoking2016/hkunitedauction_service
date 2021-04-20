@@ -17,10 +17,10 @@ public interface UserFacade {
     Long create(@RequestBody User model);
 
     @PutMapping("/{id}")
-    void update(@PathVariable Long id, @RequestBody User model);
+    void update(@PathVariable("id") Long id, @RequestBody User model);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable Long id);
+    void delete(@PathVariable("id") Long id);
 
 
 }

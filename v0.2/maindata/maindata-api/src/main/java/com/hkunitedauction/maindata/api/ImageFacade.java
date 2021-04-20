@@ -19,5 +19,5 @@ public interface ImageFacade {
     Long create(@RequestParam("file") MultipartFile file);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable Long id);
+    void delete(@PathVariable("id") Long id);
 }
